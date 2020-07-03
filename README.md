@@ -1,5 +1,7 @@
 # tabs
 
+DEMO: https://sphariab.github.io/tabs-html/
+
 for installation:
 - npm install
 - gulp build
