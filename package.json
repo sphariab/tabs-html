@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
+  "private": true,
+  "homepage": "https://sphariab.github.io/tabs-html/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +25,8 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
-    "gulp-autoprefixer": "^7.0.1"
+    "gh-pages": "^2.2.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-gh-pages": "^0.5.4"
   }
 }

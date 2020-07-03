@@ -8,6 +8,7 @@ var pug = require('gulp-pug');
 var autoprefixer = require('gulp-autoprefixer');
 var minifycss = require('gulp-minify-css');
 var copy = require('gulp-copy');
+var deploy = require('gulp-gh-pages');
 
 gulp.task('copy', function() {
 	 gulp.src('./src/images/*')
@@ -51,6 +52,11 @@ gulp.task('watch', function() {
 	gulp.watch('src/views/*.pug', gulp.series('pug'));
 	gulp.watch('src/scss/**/*.scss', gulp.series('sass'));
 	gulp.watch('src/js/*.js', gulp.series('minify-js'));
+});
+
+gulp.task('deploy', function () {
+	return gulp.src("./dist/**/*")
+		.pipe(deploy())
 });
 
 gulp.task('default', gulp.parallel('watch', 'browser-sync'));
