@@ -1,0 +1,32 @@
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&:-moz-placeholder           {@content}
+	&::-moz-placeholder          {@content}
+	&:-ms-input-placeholder      {@content}
+}
+
+@mixin spinbutton {
+	&::-webkit-outer-spin-button {@content}
+	&::-webkit-inner-spin-button {@content}
+}
+
+@mixin select {
+	width: 245px;
+	height: 42px;
+	border: 1px solid #E3E7ED;
+	box-sizing: border-box;
+	border-radius: 4px;
+	font-family: 'RobotoRegular';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 163.6%;
+	letter-spacing: 0.03em;
+	color: #7B819A;
+	opacity: 0.6;
+	padding-left: 20px;
+	webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	left: -5px!important;
+}

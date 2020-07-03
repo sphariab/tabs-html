@@ -1,0 +1,49 @@
+.rating {
+	height: 11px;
+	display: flex;
+	flex-direction: row-reverse;
+	margin-left: 8px;
+	margin-top: 1px;
+	&__wrapper {
+		display: flex;
+		flex-direction: row;
+		height: 14px;
+		width: 82px;
+		margin-right: 35px;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+
+.rating > input { display: none; }
+.rating > label.label_star:before {
+	content: url('../images/star-unchecked.svg');
+	display: flex;
+	align-items: center;
+}
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label.label_star, /* show gold star when clicked */
+.rating:not(:checked) > label.label_star:hover, /* hover current star */
+.rating:not(:checked) > label.label_star:hover ~ label.label_star:before  {
+	content: url('../images/star-checked.svg');
+	cursor: pointer;
+} /* hover previous stars in list */
+
+.rating > input:checked + label.label_star:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label.label_star:hover,
+.rating > label.label_star:hover ~ input:checked ~ label.label_star, /* lighten current selection */
+.rating > input:checked ~ label.label_star:hover ~ label.label_star:before {
+	content: url('../images/star-checked.svg');
+	cursor: pointer;
+}
+
+.rating:not(:checked)>label.label_star:hover .rating{
+	margin-left: 10px;
+}
+
+.label_star{
+	display: flex;
+	align-items: center;
+}
